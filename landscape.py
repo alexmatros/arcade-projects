@@ -11,22 +11,26 @@ def setup():
     arcade.schedule(update, 1/60)
     arcade.run()
 
+
 def update(delta_time):
     pass
+
 
 @window.event
 def on_draw():
     arcade.start_render()
-    
+
     # draw the ground
     arcade.draw_lrtb_rectangle_filled(0, WIDTH, 100, 0, arcade.color.GREEN)
 
     # draw the sun
-    arcade.draw_circle_filled(WIDTH - 100, HEIGHT - 100, 50, arcade.color.YELLOW)
+    arcade.draw_circle_filled(WIDTH - 100, HEIGHT - 100, 50,
+                              arcade.color.YELLOW)
 
     draw_tree(175, 160)
     draw_tree(WIDTH-200, 160)
     draw_tree(WIDTH-125, 160)
+
 
 def draw_tree(x: int, y: int):
     tree_height = 150
@@ -35,7 +39,7 @@ def draw_tree(x: int, y: int):
     leaves_width = 80 / 2
     leaves_height = 75
     arcade.draw_triangle_filled(x - leaves_width, y,
-                                x, y + leaves_height, 
+                                x, y + leaves_height,
                                 x + leaves_width, y,
                                 arcade.color.DARK_GREEN)
 
